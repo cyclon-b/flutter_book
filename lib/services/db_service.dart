@@ -11,7 +11,8 @@ class DbService {
   }
 
   dynamic read(String boxName, String fieldKey) {
-
+    var box = Hive.box(name: boxName);
+    return box.get(fieldKey);
   }
 
   void update(String boxName, String fieldKey, dynamic newValue) {
@@ -19,5 +20,8 @@ class DbService {
     box.put(fieldKey, newValue);
   }
 
-  void delete(String key) {}
+  void delete(String boxName, String fieldKey) {
+    var box = Hive.box(name: boxName);
+    box.delete(fieldKey);
+  }
 }
