@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-interface class BaseAppModel extends Model {
+class BaseAppModel extends Model {
   int stackIndex = 0;
   List entityList = [];
   var entityBeingEdited;
