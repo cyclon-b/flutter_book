@@ -1,3 +1,4 @@
+import 'package:flutter_book/screens/notes/notes_model.dart';
 import 'package:flutter_book/services/db_service.dart';
 import 'package:get_it/get_it.dart';
 
