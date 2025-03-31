@@ -1,11 +1,14 @@
+import 'package:uuid/uuid.dart';
+
 import '../../base_classes/base_app_model.dart';
 
+var uuid = Uuid();
+
 class NoteModel {
-  late String id;
+  late String id = uuid.v4();
   late String title;
   late String content;
-  late String color;
-
+  late dynamic color;
 
   @override
   String toString() {
@@ -14,7 +17,7 @@ class NoteModel {
 }
 
 class NotesModel extends BaseAppModel {
-  late String color;
+  dynamic color;
 
   void setColor(dynamic newColor) {
     color = newColor;

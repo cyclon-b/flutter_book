@@ -7,7 +7,7 @@ class BaseAppModel extends Model {
   List<dynamic> entityList = [];
   var entityBeingEdited;
   String chosenDate = '';
-  final DbService _db = DiContainer.getItInstance.get<DbService>();
+  final DbService _db = DiContainer.getIt.get<DbService>();
 
   void setChosenDate(String inDate) {
     chosenDate = inDate;
@@ -15,7 +15,7 @@ class BaseAppModel extends Model {
   }
 
   void getData(String boxName, String fieldName) {
-    entityList = _db.read(boxName, fieldName) ?? [];
+    entityList = _db.read(boxName) ?? [];
     notifyListeners();
   }
 
